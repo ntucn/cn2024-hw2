@@ -30,7 +30,7 @@ RUN sed -i 's/nullok_secure/nullok/' /etc/pam.d/common-auth
 
 # add user/group, empty password, allow sudo
 RUN groupadd -g 1000 cn
-RUN useradd --uid 1000 --gid 1000 --groups root,sudo,adm,users --create-home --password '' --shell /bin/bash cn
+RUN useradd --uid 1000 --gid 1000 --groups root,sudo,adm,users --create-home --password 'cn2024' --shell /bin/bash cn
 RUN echo '%sudo ALL=(ALL) ALL' >> /etc/sudoers
 RUN mkdir -p /home/cn/hw2
 
